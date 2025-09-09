@@ -11,7 +11,7 @@
 // console.log(document.querySelector('.guess').value);
 
 // Generate a random secret number between 1 and 20
-const secretNumber = Math.trunc(Math.random() * 20 + 1);
+const secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 // Set the initial score
 let score = 20;
