@@ -15,6 +15,7 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 // Set the initial score
 let score = 20;
+let highscore = 0;
 
 // Add an event listener to the "Check!" button
 document.querySelector('.check').addEventListener('click', function () {
@@ -39,6 +40,13 @@ document.querySelector('.check').addEventListener('click', function () {
     // Change background color and enlarge the number box
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+
+    // Change de HighScore
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
 
     // When the guess is too high
   } else if (guess > secretNumber) {
@@ -86,7 +94,7 @@ document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 
   // Reset Score
-  document.querySelector('.score').textContent = '20';
+  document.querySelector('.score').textContent = score;
 
   // Restore the inicial conditions ofthe message, number, score and guess input field
   document.querySelector('.number').textContent = '?';
